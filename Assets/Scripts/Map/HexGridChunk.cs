@@ -8,7 +8,7 @@ namespace Map
         private Canvas _overlayCanvas;
         private HexMesh _mesh;
         private HexCell[] _cells;
-        private bool _triangulationRequired = false;
+        private bool _triangulationRequired;
 
         public void Awake()
         {
