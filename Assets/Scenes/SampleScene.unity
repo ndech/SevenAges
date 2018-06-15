@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -180,7 +180,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Water
+  m_Text: Grassland
 --- !u!222 &18243315
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -409,6 +409,7 @@ GameObject:
   m_Component:
   - component: {fileID: 602981117}
   - component: {fileID: 602981118}
+  - component: {fileID: 602981119}
   m_Layer: 5
   m_Name: Toggle (2)
   m_TagString: Untagged
@@ -479,11 +480,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 782296935}
-        m_MethodName: SelectColor
-        m_Mode: 3
+        m_MethodName: SelectTerrain
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 602981119}
+          m_ObjectArgumentAssemblyTypeName: UI.TerrainTypeContainer, Assembly-CSharp
           m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
@@ -492,6 +493,18 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
   m_IsOn: 0
+--- !u!114 &602981119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 602981116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bc3c3f93927ac14a9e4ef4914dba483, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TerrainType: 3
 --- !u!1 &782296934
 GameObject:
   m_ObjectHideFlags: 0
@@ -522,11 +535,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f402e5b144be6f4f907b1fc9119e414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Colors:
-  - {r: 0.68796045, g: 0.8773585, b: 0.28555536, a: 0}
-  - {r: 0.6509434, g: 0.49434853, b: 0.49434853, a: 0}
-  - {r: 0.7924528, g: 0.77506256, b: 0.30277678, a: 0}
-  - {r: 0, g: 0.488204, b: 1, a: 0}
   HexGrid: {fileID: 824940652}
   UnitPrefab: {fileID: 114721303902432308, guid: c4bd8446fd030304db5b066969499654,
     type: 2}
@@ -615,6 +623,7 @@ GameObject:
   m_Component:
   - component: {fileID: 792508386}
   - component: {fileID: 792508387}
+  - component: {fileID: 792508388}
   m_Layer: 5
   m_Name: Toggle
   m_TagString: Untagged
@@ -685,11 +694,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 782296935}
-        m_MethodName: SelectColor
-        m_Mode: 3
+        m_MethodName: SelectTerrain
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 792508388}
+          m_ObjectArgumentAssemblyTypeName: UI.TerrainTypeContainer, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -698,6 +707,18 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
   m_IsOn: 1
+--- !u!114 &792508388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 792508385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bc3c3f93927ac14a9e4ef4914dba483, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TerrainType: 0
 --- !u!1 &824940650
 GameObject:
   m_ObjectHideFlags: 0
@@ -746,7 +767,6 @@ MonoBehaviour:
     type: 2}
   TextPrefab: {fileID: 114108782523921594, guid: 8863c7ae318bf2d41b8488080f5fea6c,
     type: 2}
-  DefaultColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &873489957
 GameObject:
   m_ObjectHideFlags: 0
@@ -1087,7 +1107,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Grass
+  m_Text: Ocean
 --- !u!222 &1070605843
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1372,7 +1392,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Dirt
+  m_Text: Coast
 --- !u!222 &1380548483
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1789,6 +1809,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1995938085}
   - component: {fileID: 1995938086}
+  - component: {fileID: 1995938087}
   m_Layer: 5
   m_Name: Toggle (1)
   m_TagString: Untagged
@@ -1859,11 +1880,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 782296935}
-        m_MethodName: SelectColor
-        m_Mode: 3
+        m_MethodName: SelectTerrain
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 1995938087}
+          m_ObjectArgumentAssemblyTypeName: UI.TerrainTypeContainer, Assembly-CSharp
           m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1872,6 +1893,18 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
   m_IsOn: 0
+--- !u!114 &1995938087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1995938084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bc3c3f93927ac14a9e4ef4914dba483, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TerrainType: 1
 --- !u!1 &2068259767
 GameObject:
   m_ObjectHideFlags: 0
@@ -1967,6 +2000,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2111162744}
   - component: {fileID: 2111162745}
+  - component: {fileID: 2111162746}
   m_Layer: 5
   m_Name: Toggle (3)
   m_TagString: Untagged
@@ -2037,11 +2071,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 782296935}
-        m_MethodName: SelectColor
-        m_Mode: 3
+        m_MethodName: SelectTerrain
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 2111162746}
+          m_ObjectArgumentAssemblyTypeName: UI.TerrainTypeContainer, Assembly-CSharp
           m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2050,3 +2084,15 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
   m_IsOn: 0
+--- !u!114 &2111162746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2111162743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bc3c3f93927ac14a9e4ef4914dba483, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TerrainType: 5

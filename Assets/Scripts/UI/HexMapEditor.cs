@@ -1,25 +1,26 @@
-﻿using UnityEngine;
+﻿using Terrain;
+using UI;
+using UnityEngine;
 using UnityEngine.EventSystems;
 
 namespace Map
 {
     class HexMapEditor : MonoBehaviour
     {
-        public Color[] Colors;
         public HexGrid HexGrid;
         public Unit UnitPrefab;
-        private Color _activeColor;
+        private TerrainType _activeTerrain;
 
         void Awake()
         {
-            SelectColor(0);
+            _activeTerrain = TerrainType.Ocean;
         }
 
         void Update()
         {
             if(EventSystem.current.IsPointerOverGameObject()) return;
             if (Input.GetMouseButton(0))
-                GetActiveCell()?.SetColor(_activeColor);
+                GetActiveCell()?.SetTerrain(_activeTerrain);
             if (Input.GetKeyDown(KeyCode.U))
             {
                 if (Input.GetKey(KeyCode.LeftShift))
@@ -47,9 +48,9 @@ namespace Map
             return null;
         }
 
-        public void SelectColor(int index)
+        public void SelectTerrain(TerrainTypeContainer container)
         {
-            _activeColor = Colors[index];
+            _activeTerrain = container.TerrainType;
         }
     }
 }

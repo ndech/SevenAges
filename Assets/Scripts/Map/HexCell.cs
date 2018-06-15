@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Terrain;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace Map
@@ -6,14 +7,14 @@ namespace Map
     class HexCell : MonoBehaviour
     {
         public HexCoordinates Coordinates;
-        private Color _color;
+        private TerrainType _terrainType;
 
-        public Color Color
+        public TerrainType TerrainType
         {
-            get { return _color; }
+            get { return _terrainType; }
             set
             {
-                _color = value;
+                _terrainType = value;
                 Refresh();
             }
         }
@@ -40,13 +41,13 @@ namespace Map
                 cell.SetNeighbour(this, direction.Opposite(), false);
         }
 
-        public void Initialize(HexCoordinates coordinates, Color color)
+        public void Initialize(HexCoordinates coordinates, TerrainType terrainType)
         {
             Coordinates = coordinates;
-            _color = color;
+            _terrainType = terrainType;
             name = $"Cell {coordinates}";
         }
 
-        public void SetColor(Color activeColor) => Color = activeColor;
+        public void SetTerrain(TerrainType terrainType) => TerrainType = terrainType;
     }
 }

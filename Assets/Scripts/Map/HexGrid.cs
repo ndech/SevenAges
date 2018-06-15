@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Terrain;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace Map
@@ -10,7 +11,6 @@ namespace Map
         public HexCell CellPrefab;
         public HexGridChunk ChunkPrefab;
         public Text TextPrefab;
-        public Color DefaultColor = Color.white;
         private HexGridChunk[] _chunks;
         private HexCell[] _cells;
         private int CellCountX => ChunkCountX * HexMetrics.ChunkSizeX;
@@ -49,7 +49,7 @@ namespace Map
             HexCoordinates coordinates = HexCoordinates.FromOffset(x, z);
             Vector3 center = HexMetrics.Center(coordinates);
             HexCell cell = Instantiate(CellPrefab, center, Quaternion.identity, transform);
-            cell.Initialize(coordinates, DefaultColor);
+            cell.Initialize(coordinates, TerrainType.Ocean);
             AssignToChunk(x, z, cell);
             SetNeighbours(x, z, i, cell);
             return cell;
