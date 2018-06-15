@@ -1,13 +1,14 @@
 ﻿namespace Terrain
 {
-    class TerrainType
+    enum TerrainType
     {
-        public TerrainType(string code)
-        {
-            Code = code;
-        }
-
-        public string Code { get; }
-
+        Ocean,
+        Coast,
+        Lake,
+        Desert,
+        Plains,
+        Grassland,
+        Tundra,
+        Snow
     }
 }
