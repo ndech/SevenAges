@@ -1,4 +1,4 @@
-﻿namespace Terrain
+﻿namespace Map.CellFeatures
 {
     enum ElevationType
     {

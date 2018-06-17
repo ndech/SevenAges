@@ -1,20 +1,21 @@
-﻿using Terrain;
+﻿using Map.CellFeatures;
 using UnityEngine;
 using UnityEngine.UI;
+using Terrain = Map.CellFeatures.Terrain;
 
 namespace Map
 {
     class HexCell : MonoBehaviour
     {
         public HexCoordinates Coordinates;
-        private TerrainType _terrainType;
+        private Terrain _terrain;
 
-        public TerrainType TerrainType
+        public Terrain Terrain
         {
-            get { return _terrainType; }
+            get { return _terrain; }
             set
             {
-                _terrainType = value;
+                _terrain = value;
                 Refresh();
             }
         }
@@ -44,10 +45,10 @@ namespace Map
         public void Initialize(HexCoordinates coordinates, TerrainType terrainType)
         {
             Coordinates = coordinates;
-            _terrainType = terrainType;
+            _terrain = TerrainCollection.Get(TerrainType.Ocean);
             name = $"Cell {coordinates}";
         }
 
-        public void SetTerrain(TerrainType terrainType) => TerrainType = terrainType;
+        public void SetTerrain(Terrain terrain) => Terrain = terrain;
     }
 }

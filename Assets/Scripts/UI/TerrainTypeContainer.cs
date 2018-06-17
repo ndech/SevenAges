@@ -1,4 +1,4 @@
-﻿using Terrain;
+﻿using Map.CellFeatures;
 using UnityEngine;
 
 namespace UI

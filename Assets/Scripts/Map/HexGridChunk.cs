@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using Boo.Lang;
+using Map.MapComponents;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace Map
@@ -6,14 +8,18 @@ namespace Map
     class HexGridChunk : MonoBehaviour
     {
         private Canvas _overlayCanvas;
-        private HexMesh _mesh;
+        public List<ChunkComponent> Components;
         private HexCell[] _cells;
         private bool _triangulationRequired;
 
         public void Awake()
         {
             _overlayCanvas = GetComponentInChildren<Canvas>();
-            _mesh = GetComponentInChildren<HexMesh>();
+            Components = new List<ChunkComponent>
+            {
+                GetComponentInChildren<TerrainComponent>(),
+                GetComponentInChildren<TreesComponent>()
+            };
             _cells = new HexCell[HexMetrics.ChunkSizeX * HexMetrics.ChunkSizeZ];
             _triangulationRequired = true;
         }
@@ -22,7 +28,8 @@ namespace Map
         {
             if (_triangulationRequired)
             {
-                _mesh.Triangulate(_cells);
+                foreach (var component in Components)
+                    component.Draw(_cells);
                 _triangulationRequired = false;
             }
         }

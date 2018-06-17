@@ -1,4 +1,4 @@
-﻿using Terrain;
+﻿using Map.CellFeatures;
 using UI;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -20,7 +20,7 @@ namespace Map
         {
             if(EventSystem.current.IsPointerOverGameObject()) return;
             if (Input.GetMouseButton(0))
-                GetActiveCell()?.SetTerrain(_activeTerrain);
+                GetActiveCell()?.SetTerrain(TerrainCollection.Get(_activeTerrain));
             if (Input.GetKeyDown(KeyCode.U))
             {
                 if (Input.GetKey(KeyCode.LeftShift))

@@ -1,4 +1,4 @@
-﻿using Terrain;
+﻿using Map.CellFeatures;
 using UnityEngine;
 using UnityEngine.UI;
 
