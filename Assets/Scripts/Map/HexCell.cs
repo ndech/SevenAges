@@ -9,6 +9,7 @@ namespace Map
     {
         public HexCoordinates Coordinates;
         private Terrain _terrain;
+        private TerrainFeature _terrainFeature;
 
         public Terrain Terrain
         {
@@ -16,6 +17,16 @@ namespace Map
             set
             {
                 _terrain = value;
+                Refresh();
+            }
+        }
+
+        public TerrainFeature TerrainFeature
+        {
+            get { return _terrainFeature; }
+            set
+            {
+                _terrainFeature = value;
                 Refresh();
             }
         }
@@ -50,5 +61,6 @@ namespace Map
         }
 
         public void SetTerrain(Terrain terrain) => Terrain = terrain;
+        public void SetTerrainFeature(TerrainFeature terrainFeature) => TerrainFeature = terrainFeature;
     }
 }

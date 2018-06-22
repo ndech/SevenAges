@@ -1,4 +1,5 @@
-﻿using Map.CellFeatures;
+﻿using Assets.Scripts.Map.CellFeatures;
+using Map.CellFeatures;
 using UI;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -20,7 +21,11 @@ namespace Map
         {
             if(EventSystem.current.IsPointerOverGameObject()) return;
             if (Input.GetMouseButton(0))
+            {
                 GetActiveCell()?.SetTerrain(TerrainCollection.Get(_activeTerrain));
+                if(_activeTerrain == TerrainType.Grassland)
+                    GetActiveCell()?.SetTerrainFeature(TerrainFeatureCollection.Get(TerrainFeatureType.Forest));
+            }
             if (Input.GetKeyDown(KeyCode.U))
             {
                 if (Input.GetKey(KeyCode.LeftShift))

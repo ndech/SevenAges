@@ -5,7 +5,7 @@ namespace Map.CellFeatures
 {
     static class TerrainCollection
     {
-        private static Dictionary<TerrainType, Terrain> _terrains;
+        private static readonly Dictionary<TerrainType, Terrain> Terrains;
 
         static TerrainCollection()
         {
@@ -20,12 +20,12 @@ namespace Map.CellFeatures
                 new Terrain(TerrainType.Snow),
                 new Terrain(TerrainType.Tundra)
             };
-            _terrains = terrains.ToDictionary(t => t.Type);
+            Terrains = terrains.ToDictionary(t => t.Type);
         }
 
         public static Terrain Get(TerrainType type)
         {
-            return _terrains[type];
+            return Terrains[type];
         }
     }
 }

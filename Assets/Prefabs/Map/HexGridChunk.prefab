@@ -188,6 +188,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5abcc7f21aa51d34c8e734f85c1069f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GrasslandForestTreePrefabs:
+  - {fileID: 4365435500197866, guid: c48b5ab55f91b7946a38dfb7d3ab71db, type: 2}
 --- !u!114 &114669530878041050
 MonoBehaviour:
   m_ObjectHideFlags: 1
